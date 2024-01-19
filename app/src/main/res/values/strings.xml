@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">SpeedQuiz</string>
+
+    <string name="main_actionbar_title_settings">Parameters</string>
+    <string name="main_actionbar_title_questions">Questions</string>
+    <string name="main_actionbar_title_about">About</string>
+
+    <string name="main_new_player">New player</string>
+    <string name="main_player1_name">Name player 1</string>
+    <string name="main_player2_name">Name player 2</string>
+    <string name="main_start_new_game">Start new game</string>
+
+    <string name="game_txt_nom1">Player name</string>
+    <string name="game_txt_nom2">Player 2 name</string>
+
+    <string name="game_button_menu">Menu</string>
+    <string name="game_button_replay">Replay</string>
+</resources>
