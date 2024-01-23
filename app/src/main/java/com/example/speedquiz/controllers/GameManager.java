@@ -4,17 +4,14 @@ import android.os.Handler;
 import android.os.Looper;
 
 import com.example.speedquiz.GameActivity;
-import com.example.speedquiz.models.Question;
 import com.example.speedquiz.models.QuestionData;
-
-import java.util.ArrayList;
 
 public class GameManager {
     // Constants
-    private final int QUESTION_TIME = 5000;
+    private final int QUESTION_TIME = 2000;
 
     // Global variables
-    private QuestionData questionData = new QuestionData();
+    public QuestionData questionData;
     public GameActivity gameActivity;
     private int questionIndex = 0;
     private int scorePlayer1 = 0;
@@ -37,9 +34,6 @@ public class GameManager {
      * Initialize the game
      */
     public void initGame() {
-        // Create the questions
-        questionData.createQuestions();
-
         // Start the delay
         mainHandler.postDelayed(nextQuestionRunnable, QUESTION_TIME);
     }
@@ -87,13 +81,13 @@ public class GameManager {
         if (!gameEnded) {
             // Calculate the scores
             if (player) {
-                if (questionData.getQuestionsList().get(questionIndex).getAnswer()) {
+                if (questionData.getQuestionsList().get(questionIndex).getAnswer() == 1) {
                     scorePlayer2++;
                 } else {
                     scorePlayer2--;
                 }
             } else {
-                if (questionData.getQuestionsList().get(questionIndex).getAnswer()) {
+                if (questionData.getQuestionsList().get(questionIndex).getAnswer() == 0) {
                     scorePlayer1++;
                 } else {
                     scorePlayer1--;

@@ -4,16 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.speedquiz.controllers.GameManager;
+import com.example.speedquiz.models.QuestionData;
 import com.google.android.material.button.MaterialButton;
-
-import java.util.ArrayList;
 
 public class GameActivity extends AppCompatActivity {
 
@@ -87,6 +84,7 @@ public class GameActivity extends AppCompatActivity {
         // Initialize the game manager
         GameManager gameManager = new GameManager();
         gameManager.gameActivity = this;
+        gameManager.questionData = new QuestionData(this);
         gameManager.initGame();
         gameManager.displayQuestion();
 

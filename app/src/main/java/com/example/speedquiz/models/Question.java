@@ -1,17 +1,24 @@
 package com.example.speedquiz.models;
 
+import android.database.Cursor;
+
 public class Question {
     private String label;
-    private Boolean answer;
+    private int answer;
 
     /**
      * Constructor.
      * @param label The question's label.
      * @param answer The question's answer.
      */
-    public Question(String label, Boolean answer) {
+    public Question(String label, int answer) {
         this.label = label;
         this.answer = answer;
+    }
+
+    public Question(Cursor cursor) {
+        label = cursor.getString(cursor.getColumnIndexOrThrow("label"));
+        answer = cursor.getInt(cursor.getColumnIndexOrThrow("answer"));
     }
 
     /**
@@ -24,7 +31,7 @@ public class Question {
     /**
      * @return The question's answer.
      */
-    public Boolean getAnswer() {
+    public int getAnswer() {
         return answer;
     }
 }
