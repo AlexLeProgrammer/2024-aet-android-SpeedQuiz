@@ -20,7 +20,7 @@ public class SpeedQuizSQLite extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         // Create the table quiz
         db.execSQL("CREATE TABLE quiz(idQuiz INTEGER PRIMARY KEY, label TEXT, answer INTEGER);");
-        db.execSQL("INSERT INTO quiz VALUES (null, \"La Grande Muraille de Chine est visible depuis la Lune.\", 1);");
+        db.execSQL("INSERT INTO quiz VALUES (null, \"La Grande Muraille de Chine est visible depuis la Lune.\", 0);");
         db.execSQL("INSERT INTO quiz VALUES (null, \"La France est le pays le plus visité au monde.\", 1);");
         db.execSQL("INSERT INTO quiz VALUES (null, \"La mer Morte est l'endroit le plus bas de la Terre.\", 1);");
         db.execSQL("INSERT INTO quiz VALUES (null, \"La Banque mondiale est une organisation financière internationale.\", 1);");

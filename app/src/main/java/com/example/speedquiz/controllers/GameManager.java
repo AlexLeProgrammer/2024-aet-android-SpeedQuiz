@@ -89,7 +89,7 @@ public class GameManager {
                     scorePlayer2--;
                 }
             } else {
-                if (questionData.getQuestionsList().get(questionIndex).getAnswer() == 0) {
+                if (questionData.getQuestionsList().get(questionIndex).getAnswer() == 1) {
                     scorePlayer1++;
                 } else {
                     scorePlayer1--;
