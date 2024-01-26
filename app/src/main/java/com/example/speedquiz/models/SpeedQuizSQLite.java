@@ -6,13 +6,13 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
-public class SpeedQuizSqLite extends SQLiteOpenHelper {
+public class SpeedQuizSQLite extends SQLiteOpenHelper {
     // Constants
     static String DB_NAME = "SpeedQuiz.db";
     static int DB_VERSION = 1;
 
 
-    public SpeedQuizSqLite(@Nullable Context context) {
+    public SpeedQuizSQLite(@Nullable Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }
 

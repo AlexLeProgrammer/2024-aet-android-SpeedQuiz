@@ -29,7 +29,7 @@ public class QuestionData {
      * @param context Context of the application to pass the query.
      */
     private void initQuestionList(Context context) {
-        SpeedQuizSqLite helper = new SpeedQuizSqLite(context);
+        SpeedQuizSQLite helper = new SpeedQuizSQLite(context);
         SQLiteDatabase db = helper.getReadableDatabase();
         Cursor cursor = db.query(true, "quiz", new String[] { "idQuiz", "label", "answer" },
                 null, null, null, null, "idquiz", null);

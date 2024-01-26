@@ -43,6 +43,8 @@ public class GameManager {
      */
     public void restart() {
         gameEnded = false;
+        scorePlayer1 = 0;
+        scorePlayer2 = 0;
         gameActivity.setScores(0, 0);
         questionIndex = 0;
         displayQuestion();
