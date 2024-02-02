@@ -11,8 +11,8 @@ public class GameManager {
     private final int QUESTION_TIME = 2000;
 
     // Global variables
-    public QuestionData questionData;
-    public GameActivity gameActivity;
+    private QuestionData questionData;
+    private GameActivity gameActivity;
     private int questionIndex = 0;
     private int scorePlayer1 = 0;
     private int scorePlayer2 = 0;
@@ -106,5 +106,21 @@ public class GameManager {
             mainHandler.removeCallbacks(nextQuestionRunnable);
             mainHandler.postDelayed(nextQuestionRunnable, QUESTION_TIME);
         }
+    }
+
+    /**
+     * Set the gameActivity variable.
+     * @param gameActivity The GameActivity to pass in this.gameActivity.
+     */
+    public void setGameActivity(GameActivity gameActivity) {
+        this.gameActivity = gameActivity;
+    }
+
+    /**
+     * Set the questionData variable.
+     * @param questionData The QuestionData to pass in this.questionData.
+     */
+    public void setQuestionData(QuestionData questionData) {
+        this.questionData  = questionData;
     }
 }

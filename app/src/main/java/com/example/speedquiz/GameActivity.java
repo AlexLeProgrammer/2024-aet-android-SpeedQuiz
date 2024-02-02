@@ -83,8 +83,8 @@ public class GameActivity extends AppCompatActivity {
 
         // Initialize the game manager
         GameManager gameManager = new GameManager();
-        gameManager.gameActivity = this;
-        gameManager.questionData = new QuestionData(this);
+        gameManager.setGameActivity(this);
+        gameManager.setQuestionData(new QuestionData(this));
         gameManager.initGame();
         gameManager.displayQuestion();
 
