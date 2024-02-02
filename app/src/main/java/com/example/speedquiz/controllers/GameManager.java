@@ -8,6 +8,7 @@ import com.example.speedquiz.models.QuestionData;
 
 public class GameManager {
     // Constants
+    private final int FIRST_QUESTION_TIME = 5000;
     private final int QUESTION_TIME = 2000;
 
     // Global variables
@@ -27,7 +28,9 @@ public class GameManager {
             nextQuestion();
 
             // Restart the timer
-            mainHandler.postDelayed(this, QUESTION_TIME);
+            if (!gameEnded) {
+                mainHandler.postDelayed(this, QUESTION_TIME);
+            }
         }
     };
     /**
@@ -35,7 +38,7 @@ public class GameManager {
      */
     public void initGame() {
         // Start the delay
-        mainHandler.postDelayed(nextQuestionRunnable, QUESTION_TIME);
+        mainHandler.postDelayed(nextQuestionRunnable, FIRST_QUESTION_TIME);
     }
 
     /**
@@ -48,7 +51,7 @@ public class GameManager {
         gameActivity.setScores(0, 0);
         questionIndex = 0;
         displayQuestion();
-        mainHandler.postDelayed(nextQuestionRunnable, QUESTION_TIME);
+        mainHandler.postDelayed(nextQuestionRunnable, FIRST_QUESTION_TIME);
     }
 
     /**
@@ -67,9 +70,6 @@ public class GameManager {
         if (questionIndex >= questionData.getQuestionsList().size()) {
             gameEnded = true;
             gameActivity.endGame();
-
-            // Stop the timer
-            mainHandler.removeCallbacks(nextQuestionRunnable);
         } else {
             displayQuestion();
         }
