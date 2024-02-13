@@ -79,10 +79,10 @@ public class MainActivity extends AppCompatActivity {
         BT_start_new_game.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent GameActivity = new Intent(MainActivity.this, GameActivity.class);
-                GameActivity.putExtra("player1_name", ET_player1_name.getText().toString());
-                GameActivity.putExtra("player2_name", ET_player2_name.getText().toString());
-                startActivity(GameActivity);
+                Intent gameActivity = new Intent(MainActivity.this, GameActivity.class);
+                gameActivity.putExtra("player1_name", ET_player1_name.getText().toString());
+                gameActivity.putExtra("player2_name", ET_player2_name.getText().toString());
+                startActivity(gameActivity);
             }
         });
     }

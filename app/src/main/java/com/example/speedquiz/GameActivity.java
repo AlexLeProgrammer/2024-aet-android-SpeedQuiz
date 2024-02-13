@@ -86,7 +86,6 @@ public class GameActivity extends AppCompatActivity {
         gameManager.setGameActivity(this);
         gameManager.setQuestionData(new QuestionData(this));
         gameManager.initGame();
-        gameManager.displayQuestion();
 
         // Listen to the click of the buttons
         BT_player1.setOnClickListener(new View.OnClickListener() {

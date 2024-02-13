@@ -37,6 +37,9 @@ public class GameManager {
      * Initialize the game
      */
     public void initGame() {
+        // Display the questions
+        displayQuestion();
+
         // Start the delay
         mainHandler.postDelayed(nextQuestionRunnable, FIRST_QUESTION_TIME);
     }
