@@ -6,8 +6,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import androidx.appcompat.widget.Toolbar;
+
+
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -32,6 +38,27 @@ public class MainActivity extends AppCompatActivity {
         ET_player2_name = findViewById(R.id.main_et_player2_name);
         ET_player2_name_layout = findViewById(R.id.main_et_player2_name_layout);
         BT_start_new_game = findViewById(R.id.main_button_start_mew_game);
+
+        Toolbar mainToolbar = findViewById(R.id.topAppBar);
+        setSupportActionBar(mainToolbar);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.action_settings) {
+            // Open settings activity
+            startActivity(new Intent(MainActivity.this, SettingsActivity.class));
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
